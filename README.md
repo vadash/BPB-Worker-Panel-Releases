@@ -22,6 +22,10 @@ npm install wrangler --save-dev
 .\build.ps1
 ```
 
+## ENV
+
+![image](https://github.com/user-attachments/assets/ba171ed5-c21d-4a89-b75e-927771c3e8eb)
+
 ## Credits
 
 Fully based on [BPB Worker Panel](https://github.com/bia-pain-bache/BPB-Worker-Panel)
