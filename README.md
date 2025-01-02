@@ -26,6 +26,8 @@ npm install wrangler --save-dev
 
 env.ID is old UUID, env.PASS is old TROJAN_PASS, env.DATABASE must be the same as KV.NAME is old env.bpb
 
+Use env.HASH for trojan password hash. Calc it here https://emn178.github.io/online-tools/sha224.html Boost performance
+
 ![image](https://github.com/user-attachments/assets/ba171ed5-c21d-4a89-b75e-927771c3e8eb)
 
 ## Credits
