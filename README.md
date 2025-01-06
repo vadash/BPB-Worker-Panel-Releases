@@ -1,45 +1,36 @@
 # MOD Worker Panel
 
-Modification with personal tweaks
+A modified Cloudflare Worker Panel for **my** needs. You are welcome to use it.
 
-## Features
+# ⭐ Key Features
 
-- Optimized obfuscation (wont trigger CF AV and lite on CPU)
-- Check after obfuscation for banned words (vless, bpb)
-- Pick up to 10 IPs at random from cleanIPs (paste directly 300+ from scanner)
-- Rate limiting support for vless
-- Small changes here and there
+- Optimized obfuscation that won't trigger Cloudflare AV and is light on CPU
+- Automatic banned word detection in obfuscated code (vless, trojan, bpb)
+- Smart CleanIP management with random selection (up to 10 IPs) from clean IP pool
+- Rate limiting support for VLESS protocol
 
-## Installation
+# 🚀 Configuration
 
-1. Install dependencies:
-```bash
-npm install wrangler --save-dev
-```
+## Required Environment Variables
 
-2. Build the project:
-```powershell
-.\build.ps1
-```
+- `ID`: Your UUID for VLESS (old `UUID`)
+- `PASS`: Password for Trojan protocol (old `TROJAN_PASS`)
+- `HASH`: Hash for Trojan protocol (cal it here for `PASS` https://emn178.github.io/online-tools/sha224.html)
+- `DATABASE`: KV namespace for settings storage (old hardcoded `bpb`). Must be same as KV name.
+- `PROXYIP`: Comma-separated list of proxy IPs (pick few closest to your location https://www.nslookup.io/domains/bpb.yousef.isegaro.com/dns-records/)
 
-## ENV
+## Panel Settings
 
-env.ID is old UUID, env.PASS is old TROJAN_PASS, env.DATABASE must be the same as KV.NAME is old env.bpb
-
-Use env.HASH for trojan password hash. Calc it here https://emn178.github.io/online-tools/sha224.html Boost performance
-
-env.PROXYIPS is required if you dont use chain proxy (your own server)
-
-![image](https://github.com/user-attachments/assets/ba171ed5-c21d-4a89-b75e-927771c3e8eb)
-
-## Credits
-
-Fully based on [BPB Worker Panel](https://github.com/bia-pain-bache/BPB-Worker-Panel)
-
-## Clean IPs
+### Clean IPs
 
 https://github.com/goingfine/WinCFScan
 
-Example:`198.41.193.36 , 104.27.64.235 , 195.85.23.248 , 172.67.116.57 , 185.170.166.68 , 23.227.39.71 , 141.101.122.116 , 162.159.137.59 , 188.42.88.15 , 91.193.59.187 , 156.238.19.89 , 45.131.209.107 , 205.233.181.245 , 160.153.0.168 , 170.114.45.182 , 192.65.217.245 , 103.21.244.97 , 154.83.2.23 , 147.185.161.168 , 168.100.6.44 , 199.181.197.37 , 89.116.250.172`
+Example:
 
-You can use https://github.com/vadash/CFScanParser to parse json
+```
+108.162.198.28,108.162.198.164,23.227.39.128,23.227.39.83,45.12.31.29,45.12.30.95,195.245.221.118,195.245.221.53,104.25.236.198,104.25.140.172,188.244.122.154,188.244.122.8,141.101.120.101,141.101.121.60,185.176.26.247,185.176.26.153,195.85.23.46,195.85.23.61,199.181.197.120,199.181.197.2,104.22.55.15,104.22.43.239,45.131.5.20,45.131.5.102,172.66.217.214,172.66.129.151,185.135.9.14,185.135.9.167,162.159.60.98,162.159.253.109,154.85.99.215,154.85.99.137,103.169.142.219,103.169.142.117,45.80.111.218,45.80.111.111,185.148.107.69,185.148.107.54,89.116.250.251,89.116.250.124,45.8.211.235,45.8.211.222,185.193.28.231,185.193.28.24,170.114.45.222,170.114.46.33,168.100.6.39,168.100.6.208,104.24.192.66,104.24.86.106,31.43.179.166,31.43.179.153,188.42.88.124,188.42.88.206,104.20.42.62,104.20.127.20,104.19.5.69,104.19.145.125,188.114.97.155,188.114.99.212,156.238.19.229,156.238.19.195,185.162.230.167,185.162.230.98,194.152.44.102,194.152.44.236,172.64.69.108,45.85.118.28,45.85.119.170,147.78.140.125,147.78.140.56,190.93.247.239,190.93.244.35,205.233.181.138,205.233.181.84,159.246.55.144,159.246.55.125,66.235.200.53,66.235.200.105,185.146.173.37,185.146.173.44,185.221.160.29,185.221.160.225,192.65.217.189,192.65.217.113,172.67.11.230,172.67.27.97,104.27.127.11,104.27.11.55,104.21.61.199,104.21.231.8,160.153.0.59,160.153.0.182,185.174.138.94,185.174.138.241,45.142.120.55,45.142.120.9,45.159.216.46,45.159.217.230,103.160.204.250,103.160.204.48,154.83.2.152,154.83.2.124,194.53.53.76,194.53.53.37,162.251.82.95,162.251.82.132,141.193.213.87,141.193.213.239,185.238.228.54,185.238.228.122,185.59.218.169,185.59.218.219,108.165.216.31,108.165.216.72,159.112.235.13,159.112.235.191,193.9.49.201,193.9.49.187,66.81.247.158,66.81.247.95,193.227.99.7,193.227.99.123,91.193.59.7,91.193.58.184,194.36.55.59,194.36.55.183,198.41.201.130,198.41.216.12,185.18.250.223,185.18.250.98,147.185.161.48,147.185.161.195,104.16.74.225,104.16.96.97,185.170.166.169,185.170.166.127,104.254.140.79,104.254.140.243,103.21.244.96,103.21.244.5,104.26.5.39,173.245.59.126,173.245.49.227,104.31.16.99,104.31.16.236,104.18.73.253,104.18.240.219
+```
+
+# 📝 Credits
+
+Based on [BPB Worker Panel](https://github.com/bia-pain-bache/BPB-Worker-Panel) <3
