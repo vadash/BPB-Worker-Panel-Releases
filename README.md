@@ -18,6 +18,8 @@ A modified Cloudflare Worker Panel for **my** needs. You are welcome to use it.
 - `DATABASE`: KV namespace for settings storage (old hardcoded `bpb`). Must be same as KV name.
 - `PROXYIP`: Comma-separated list of proxy IPs (pick few closest to your location https://www.nslookup.io/domains/bpb.yousef.isegaro.com/dns-records/)
 
+![image](https://github.com/user-attachments/assets/aea4c75b-e267-4a58-a896-2db51ad9ca45)
+
 ## ⚙️ Panel Settings
 
 ### 🌍 Clean IPs
