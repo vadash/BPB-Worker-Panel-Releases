@@ -1,27 +1,26 @@
-# MOD Worker Panel
+# 🛠️ MOD Worker Panel
 
 A modified Cloudflare Worker Panel for **my** needs. You are welcome to use it.
 
 # ⭐ Key Features
 
-- Optimized obfuscation that won't trigger Cloudflare AV and is light on CPU
-- Automatic banned word detection in obfuscated code (vless, trojan, bpb)
-- Smart CleanIP management with random selection (up to 10 IPs) from clean IP pool
-- Rate limiting support for VLESS protocol
+- 🔒 Optimized obfuscation that won't trigger Cloudflare AV and is light on CPU
+- 🚫 Automatic banned word detection in obfuscated code (vless, trojan, bpb)
+- 🌐 Smart CleanIP management with random selection (up to 10 IPs) from clean IP pool
 
 # 🚀 Configuration
 
-## Required Environment Variables
+## 🔑 Required Environment Variables
 
 - `ID`: Your UUID for VLESS (old `UUID`)
 - `PASS`: Password for Trojan protocol (old `TROJAN_PASS`)
-- `HASH`: Hash for Trojan protocol (cal it here for `PASS` https://emn178.github.io/online-tools/sha224.html)
+- `HASH`: Hash for Trojan protocol (calc it here for `PASS` https://emn178.github.io/online-tools/sha224.html)
 - `DATABASE`: KV namespace for settings storage (old hardcoded `bpb`). Must be same as KV name.
 - `PROXYIP`: Comma-separated list of proxy IPs (pick few closest to your location https://www.nslookup.io/domains/bpb.yousef.isegaro.com/dns-records/)
 
-## Panel Settings
+## ⚙️ Panel Settings
 
-### Clean IPs
+### 🌍 Clean IPs
 
 https://github.com/goingfine/WinCFScan
 
